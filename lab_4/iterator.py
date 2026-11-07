@@ -1,8 +1,5 @@
-from __future__ import annotations
 from collections.abc import Iterable, Iterator
-from dataclasses import dataclass
 
-@dataclass(frozen=True)
 class Section:
     title: str
     children: tuple[Section, ...] = ()
@@ -39,11 +36,11 @@ def create_example_course() -> Course:
     )
     return Course(root)
 
-def demo() -> None:
+def main() -> None:
     course = create_example_course()
     for section in course:
         print(f"- {section.title}")
 
 
 if __name__ == "__main__":
-    demo()
+    main()
